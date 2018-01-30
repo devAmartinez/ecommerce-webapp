@@ -1,24 +1,37 @@
 <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 border-bottom box-shadow bd-navbar text-white font-weight-bold"> <!-- Inicia encabezado -->
-  <h5 class="my-0 mr-md-auto font-weight-normal">
+  <h5 class="my-2 mr-md-auto font-weight-normal">
     {{title}}
   </h5>
-  <nav id="nav" class="my-2 my-md-0 mr-md-3">
-    <ul>
-      <a class="p-2 text-white font-weight-bold" href="#">Home</a>
-      <a class="p-2 text-white font-weight-bold" href="#">Productos</a>
-      <a class="p-2 text-white font-weight-bold" href="#">Crear producto</a>
-    </ul>
-  </nav>  
+  <nav id="nav" class="navbar navbar-expand-md navbar-light bg-light">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navBarToggle" aria-controls="navBarToggle" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div id="navBarToggle" class="collapse navbar-collapse">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/home']" routerLinkActive="active" >
+            Home 
+            <span class="sr-only">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a  class="nav-link" href="#">
+            Productos
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            Crear producto
+          </a>
+        </li>
+      </ul>
+    </div>    
+  </nav>   
 </div> <!-- Fin encabezado -->
 <div class="container">
-  <div class="px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center"> <!-- Bloque central -->
-    <h1 class="display-4">
-      Texto principal
-    </h1>
-    <p class="lead">
-      Do you see any Teletubbies in here? Do you see a slender plastic tag clipped to my shirt with my name printed on it? Do you see a little Asian child with a blank expression on his face sitting outside on a mechanical helicopter that shakes when you put quarters in it? No? Well, that's what you see at a toy store. And you must think you're in a toy store, because you're here shopping for an infant named Jeb.
-    </p>
-  </div> <!-- Fin bloque central --> 
+  <!-- Bloque central -->
+    <router-outlet></router-outlet>
+  <!-- Fin bloque central --> 
   <footer class="pt-4 my-md-5 pt-md-5 border-top"> <!-- Pie de página -->
     <p>Proyecto webApp MEAN</p>
   </footer> <!-- Fin pie de página -->

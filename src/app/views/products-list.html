@@ -1,0 +1,16 @@
+<h2>{{titulo}}</h2>
+<hr>
+<div *ngIf="products.length == 0; then noProduct else existsProducts"></div>
+<ng-template #noProduct>
+	<strong>
+		{{resGetProducts}}
+	</strong>
+</ng-template>
+<ng-template #existsProducts>
+	<ul *ngFor=" let product of products ">
+		<li>
+			<strong>{{product.name}}</strong> 
+			<p>{{product.price}}</p>
+		</li>
+	</ul>
+</ng-template>

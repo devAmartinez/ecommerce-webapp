@@ -1,0 +1,64 @@
+<div class="col-md-8 offset-md-2">
+<div class="card card-outline-secondary">
+    <div class="card-header">
+     <h3>{{titulo}}</h3>
+    </div>
+  <div class="card-block p-4">
+    <form #formProduct="ngForm" (ngSubmit)="onSubmit(); " class="needs-validation" >
+      <div class="row">
+        <div class="col-md-6">
+          <label for="name">Nombre del producto</label>
+          <input class="form-control" name="name" placeholder="" value="" required type="text" #nombre="ngModel" [(ngModel)]="product.name">
+          <div *ngIf="formProduct.hasError('required', 'name') && formProduct.submitted" class="alert alert-danger">
+            Valide el nombre del producto, es requerido.
+          </div>
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="description">Descripción del producto</label>
+          <input class="form-control" name="description" placeholder="" value="" required type="text" #description="ngModel" [(ngModel)]="product.description">
+          <div *ngIf="formProduct.hasError('required', 'description') && formProduct.submitted" class="alert alert-danger">
+            Valide la descripción del producto, es requerida.
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <label for="price">Precio</label>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text">$</span>
+          </div>
+          <input class="form-control" name="price" placeholder="123.123" required type="text" #price="ngModel" [(ngModel)]="product.price" maxlength="15">
+          <div *ngIf="formProduct.hasError('required', 'price') && formProduct.submitted || (price.value / 1 != price.value && price.value != null)" class="alert alert-danger" style="width: 100%;">
+            El precio es requerido
+          </div>
+        </div>
+      </div>
+      <hr class="mb-4">
+      <div>
+        <div class="input-group">     
+          <input type="file" class="custom-file-input" name="image" (change)="fileChangeEvent($event)">
+          <label class="custom-file-label" for="image">
+            Seleccionar imagen
+          </label>
+          <div *ngIf="resCargaArchivo" class="alert alert-danger">
+            {{resCargaArchivo.message}}
+          </div>
+        </div>
+      </div>
+
+      <hr class="mb-4">
+      <button class="btn btn-primary btn-lg btn-block" type="submit">
+        Guardar registro
+      </button>
+    </form>
+  </div>
+</div>
+</div>
+<!-- 
+<div>
+  <form #formProduct="ngForm" (ngSubmit)="onSubmit(); formProduct.reset();">
+    <label for="name">Nombre</label>
+    <input type="text" class="form-control"/>
+  </form>
+</div> -->

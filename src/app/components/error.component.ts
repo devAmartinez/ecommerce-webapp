@@ -11,6 +11,6 @@ export class ErrorComponent {
 
 	constructor(){
 		this.titulo = 'Error 404 página no encontrada';
-		this.detalle = 'Por alguna razón la página solicitada no se ha encontrado';
+		this.detalle = 'Por alguna razón la página solicitada no se ha encontrado.';
 	}
 }

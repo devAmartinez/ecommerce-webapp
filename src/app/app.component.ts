@@ -9,7 +9,7 @@ import * as $ from 'jquery';
 })
 
 export class AppComponent {
-  title = 'Productos Angular 5';
+  title = 'Ecommerce webApp en Angular 5 (MEAN)';
 
   toggleTitle(){
     $('.title').slideToggle();

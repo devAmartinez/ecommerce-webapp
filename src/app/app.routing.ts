@@ -4,11 +4,15 @@ import { Routes, RouterModule } from '@angular/router';
 
 // Componentes propios
 import { HomeComponent } from './components/home.component';
+import { ProductsListComponent } from './components/products-list.component';
+import { ProductAddComponent } from './components/product-add.component';
 import { ErrorComponent } from './components/error.component';
 
 const appRoutes:Routes = [
 	{path: '', component: HomeComponent},
 	{path: 'home', component: HomeComponent},
+	{path: 'products', component: ProductsListComponent},
+	{path: 'add-product', component: ProductAddComponent},
 	{path: '**', component: ErrorComponent}
 ];
 

@@ -4,6 +4,7 @@ import { 	Router,
 					Params } from '@angular/router';
 import { ProductService } from '../services/product.service';
 import { Product } from '../models/product';
+import { GLOBAL } from '../services/global';
 
 @Component({
 	selector: 'products-list',
@@ -15,6 +16,7 @@ export class ProductsListComponent {
 	public titulo: string;
 	public products: any;
 	public resGetProducts: any;
+	public url: string;
 
 	constructor(
 		private _route: ActivatedRoute,
@@ -24,6 +26,7 @@ export class ProductsListComponent {
 		this.titulo = 'Listado de productos';
 		this.products = '';
 		this.resGetProducts = 'Cargando lista de productos...';
+		this.url = GLOBAL.url;
 	}
 
 	ngOnInit() {
@@ -38,7 +41,11 @@ export class ProductsListComponent {
 					console.log(this.products);
 				}, 
 				err => {
-					this.resGetProducts = JSON.parse(err._body).message;
+					try {
+						this.resGetProducts = JSON.parse(err._body).message;
+					} catch (e) {
+						this.resGetProducts = 'Ha habido un problema con el servidor';
+					}					
 				}
 			);
 	}

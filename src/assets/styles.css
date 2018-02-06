@@ -2,6 +2,32 @@ body {
 	font-family: 'Montserrat', sans-serif;
 	background-color: #ECF0F5;
 }
+
+/*
+  Estilo barra navegación 
+*/
 .bd-navbar {
     background-color: #E03137;
+}
+
+/*
+  Estilo imagen en div.card 
+*/
+.image-container-preview {
+	overflow: hidden;
+	width: 100%;
+}
+.image-style-preview {
+	display: block;
+	height: 200px;
+	margin: 0px auto;
+}
+
+.image-style-show {
+	display: block;
+	height: 250px;
+	margin: 0px auto;
+}
+.image-container-show {
+	overflow: hidden;
 }

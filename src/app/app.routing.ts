@@ -6,6 +6,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './components/home.component';
 import { ProductsListComponent } from './components/products-list.component';
 import { ProductAddComponent } from './components/product-add.component';
+import { ProductDetailComponent } from './components/product-detail.component';
+import { ProductEditComponent } from './components/product-edit.component';
 import { ErrorComponent } from './components/error.component';
 
 const appRoutes:Routes = [
@@ -13,6 +15,8 @@ const appRoutes:Routes = [
 	{path: 'home', component: HomeComponent},
 	{path: 'products', component: ProductsListComponent},
 	{path: 'add-product', component: ProductAddComponent},
+	{path: 'product-detail/:id', component: ProductDetailComponent},
+	{path: 'product-edit/:id', component: ProductEditComponent},
 	{path: '**', component: ErrorComponent}
 ];
 

@@ -7,10 +7,32 @@
 	</strong>
 </ng-template>
 <ng-template #existsProducts>
-	<ul *ngFor=" let product of products ">
-		<li>
-			<strong>{{product.name}}</strong> 
-			<p>{{product.price}}</p>
-		</li>
-	</ul>
+<div class="album py-5 bg-light">
+  <div class="container">
+  <div class="row">
+  <div class="col-md-3" *ngFor=" let product of products ">
+    <div class="card mb-4 box-shadow image-container-preview" >	
+			<img class="image-style-preview card-img-top" src="{{url}}upload/{{product.image}}">
+    	<div class="card-body">
+				<h3>{{product.name}}</h3> 
+				<p >{{product.price}}</p>
+				<div class="d-flex justify-content-between align-items-center">
+					<div class="btn-group">
+            <button type="button" class="btn btn-sm btn-outline-secondary" [routerLink]="['/product-detail',product._id]">
+            	Ver
+            </button>
+            <button type="button" class="btn btn-sm btn-outline-secondary" [routerLink]="['/product-edit',product._id]">
+            	Editar
+            </button>
+            <button type="button" class="btn btn-sm btn-outline-danger">
+            	Borrar
+            </button>
+          </div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div><!-- row -->
+</div><!-- container -->
+</div><!-- album -->
 </ng-template>

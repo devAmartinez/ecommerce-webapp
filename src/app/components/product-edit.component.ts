@@ -65,7 +65,7 @@ export class ProductEditComponent {
 		      	console.log(this.responseFile.fileName);
 		      	
 		        this.product.image = this.responseFile.fileName;
-		        this.saveData();
+		        this.updateProduct();
 
 		      }, (err) => {
 		      	console.log('Error en el llamado a makeFileRequest');
@@ -75,13 +75,15 @@ export class ProductEditComponent {
 			      }
 		      });
 			}	else {
-				this.product.image = 'default-image.svg' // Asigno la imagen por defecto
-				this.saveData();	
+				if (!this.product.image) {
+					this.product.image = 'default-image.svg' // Asigno la imagen por defecto
+				}
+				this.updateProduct();	
 			}    	
 		}  	  
 	}
 
-	saveData() {
+	updateProduct() {
 		if (!!this.product.name &&
 		    !!this.product.description &&
 		    !!this.product.price) {
@@ -92,7 +94,7 @@ export class ProductEditComponent {
 				this._productService.editProduct(id,this.product).subscribe(
 		      res => {
 		        //console.log(res);
-		        this._router.navigate(['/products']);
+		        this._router.navigate(['/product-detail',id]);
 		      },
 		      err => {
 		      	console.log('Error en el llamado a addProduct');

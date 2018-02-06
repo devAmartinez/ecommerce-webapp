@@ -17,6 +17,7 @@ export class ProductsListComponent {
 	public products: any;
 	public resGetProducts: any;
 	public url: string;
+	public confirm: string;
 
 	constructor(
 		private _route: ActivatedRoute,
@@ -27,6 +28,7 @@ export class ProductsListComponent {
 		this.products = '';
 		this.resGetProducts = 'Cargando lista de productos...';
 		this.url = GLOBAL.url;
+		this.confirm = null;
 	}
 
 	ngOnInit() {
@@ -48,5 +50,24 @@ export class ProductsListComponent {
 					}					
 				}
 			);
+	}
+
+	confirmDelete(productId) {
+		this.confirm = productId;
+	}
+
+	cancelDelete() {
+		this.confirm = null;
+	}
+
+	deleteProdut(productId) {
+		this._productService.deleteProdut(productId).subscribe(
+			res => {
+				this.getProducts();
+			},
+			err => {
+				console.log(err);
+			}
+		);
 	}
 }

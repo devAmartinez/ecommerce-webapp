@@ -8,23 +8,21 @@
       <div class="mb-3">
         <label for="name">Nombre del producto</label>
         <div class="input-group">
-          <input class="form-control" name="name" placeholder="" value="" required type="text" #nombre="ngModel" [(ngModel)]="product.name">
-          
+          <input class="form-control" name="name" placeholder="" value="" required type="text" #nombre="ngModel" [(ngModel)]="product.name">          
         </div>
         <div *ngIf="formProduct.hasError('required', 'name') && formProduct.submitted" class="alert alert-danger">
-            Valide el nombre del producto, es requerido.
-          </div>
+          Valide el nombre del producto, es requerido.
+        </div>
       </div>
       <div class="mb-3">
         <label for="description">Descripción del producto</label>
         <div class="input-group">
-          <textarea class="form-control" rows="3" name="description" placeholder="" value="" required type="text" #description="ngModel" [(ngModel)]="product.description">      
+          <textarea class="form-control" rows="3" name="description" placeholder="" value="" required type="text" #description="ngModel" [(ngModel)]="product.description">
           </textarea>
-          
         </div>
         <div *ngIf="formProduct.hasError('required', 'description') && formProduct.submitted" class="alert alert-danger">
-            Valide la descripción del producto, es requerida.
-          </div>
+          Valide la descripción del producto, es requerida.
+        </div>
       </div>
       <div>
         <label for="price">Precio</label>
@@ -33,19 +31,17 @@
             <span class="input-group-text">$</span>
           </div>
           <input class="form-control" name="price" placeholder="123.123" required type="text" #price="ngModel" [(ngModel)]="product.price" maxlength="15">
-         
         </div>
-         <div *ngIf="formProduct.hasError('required', 'price') && formProduct.submitted || (price.value / 1 != price.value && price.value != null)" class="alert alert-danger" style="width: 100%;">
-            El precio es requerido
-          </div>
+        <div *ngIf="formProduct.hasError('required', 'price') && formProduct.submitted || (price.value / 1 != price.value && price.value != null)" class="alert alert-danger" style="width: 100%;">
+          El precio es requerido
+        </div>
       </div>
       <hr class="mb-4">
       <div>
         <div *ngIf="isEdit">
-            <img style="width: 60px;" src="{{url}}upload/{{product.image}}">
-          </div>   
-        <div class="input-group">
-          
+          <img style="width: 60px;" src="{{url}}upload/{{product.image}}">
+        </div>
+        <div class="input-group">          
           <input type="file" class="custom-file-input" name="image" (change)="fileChangeEvent($event)">
           <label class="custom-file-label" for="image">
             Seleccionar imagen

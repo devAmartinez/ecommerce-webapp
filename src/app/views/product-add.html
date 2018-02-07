@@ -26,26 +26,25 @@
       </div>
       <div>
         <label for="price">Precio</label>
-        <div class="input-group">
-          <div class="input-group-prepend">
-            <span class="input-group-text">$</span>
-          </div>
+        <div class="input-group">        
+          <span class="input-group-addon">$</span>
           <input class="form-control" name="price" placeholder="123.123" required type="text" #price="ngModel" [(ngModel)]="product.price" maxlength="15">
-        </div>
+        </div>        
         <div *ngIf="formProduct.hasError('required', 'price') && formProduct.submitted || (price.value / 1 != price.value && price.value != null)" class="alert alert-danger" style="width: 100%;">
           El precio es requerido
         </div>
-      </div>
+      </div>      
       <hr class="mb-4">
       <div>
         <div *ngIf="isEdit">
           <img style="width: 60px;" src="{{url}}upload/{{product.image}}">
         </div>
-        <div class="input-group">          
-          <input type="file" class="custom-file-input" name="image" (change)="fileChangeEvent($event)">
-          <label class="custom-file-label" for="image">
-            Seleccionar imagen
-          </label>    
+        <div class="form-group">
+          <label for="image">Seleccionar imagen</label>
+          <input class="form-control-file" aria-describedby="fileHelp" type="file" name="image" (change)="fileChangeEvent($event)">
+          <small id="fileHelp" class="form-text text-muted">
+            La imagen será asociada al producto, debe ser menor o igual a 3mb y solo se permiten formatos png y jpg
+          </small>
           <div *ngIf="resFileUpload" class="alert alert-danger">
             {{resFileUpload}}
           </div>

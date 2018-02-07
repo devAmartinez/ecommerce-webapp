@@ -28,7 +28,7 @@
             	Borrar
             </button>            
           </div>
-          <div class="border-top border-bottom border-left border-right" *ngIf="confirm == product._id">
+          <div *ngIf="confirm == product._id">
             <p class="ml-1">¿Seguro que desea borrar el registro?</p>
             <div class="p-1">
               <a class="btn btn-sm btn-danger text-light" (click)="deleteProdut(product._id)">

@@ -22,6 +22,7 @@ export class ProductAddComponent {
 		fileName: ''
 	};
 	public resFileUpload: string;
+	public isEdit: boolean;
 
 	constructor(
 		private _route: ActivatedRoute,
@@ -30,6 +31,7 @@ export class ProductAddComponent {
 	){
 		this.titulo = 'Crear un nuevo producto';
 		this.product = new Product('0','','',null,'');
+		this.isEdit = false;
 	}
  
 	onSubmit() {
@@ -78,6 +80,7 @@ export class ProductAddComponent {
 	}
 
   fileChangeEvent(fileInput: any) {
+  	this.resFileUpload = null;
   	this.filesToUpload = <Array<File>>fileInput.target.files;
   }
 }

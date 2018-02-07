@@ -105,4 +105,7 @@ export class ProductEditComponent {
 		}
 	}
 
+	fileChangeEvent(fileInput: any) {
+  	this.filesToUpload = <Array<File>>fileInput.target.files;
+  }
 }

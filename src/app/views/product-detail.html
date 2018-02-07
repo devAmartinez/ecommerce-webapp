@@ -1,4 +1,4 @@
-<div *ngIf="product.length == 0; then noProduct else existsProduct">
+<div *ngIf="!product; then noProduct else existsProduct">
 </div>
 <ng-template #noProduct>
 	<strong>

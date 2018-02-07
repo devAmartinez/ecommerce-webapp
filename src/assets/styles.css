@@ -1,3 +1,9 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "~font-awesome/css/font-awesome.css";
+
+.custom-file-input:lang(es) ~ .custom-file-label::after {
+  content: "Buscar";
+}
 body {
 	font-family: 'Montserrat', sans-serif;
 	background-color: #ECF0F5;
@@ -30,4 +36,17 @@ body {
 }
 .image-container-show {
 	overflow: hidden;
+}
+
+/*
+  Estilos del pie de página 
+*/
+.footer {
+    background-color: #fff;
+    border-top: 1px solid #e5e5e5;
+    color: #40aed2;
+    display: block;
+    margin-top: 1em;
+    text-align: center;
+    padding: 40px 0;
 }

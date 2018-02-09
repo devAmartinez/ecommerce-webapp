@@ -1,7 +1,11 @@
 <app-header></app-header>
 <div class="container">
-  <h2>{{titulo}}</h2>
-  <hr>
+  <div class="alert alert-info">
+    <p>
+      <i class="fa fa-info"></i>
+      <strong>{{titulo}}</strong>.</p>
+  </div>
+  <hr class="double dashed">
   <div *ngIf="products.length == 0; then noProduct else existsProducts"></div>
   <ng-template #noProduct>
     <strong>
@@ -9,11 +13,11 @@
     </strong>
   </ng-template>
   <ng-template #existsProducts>
-    <div class="album py-5 bg-light">
+    <div class="album py-5 bg-white">
       <div class="container">
         <div class="row">
           <div class="col-md-3" *ngFor=" let product of products ">
-            <div class="card mb-4 box-shadow image-container-preview">
+            <div class="card border-info mb-4 box-shadow image-container-preview">
               <img class="image-style-preview card-img-top" src="{{url}}upload/{{product.image}}">
               <div class="card-body">
                 <h3>{{product.name}}</h3>

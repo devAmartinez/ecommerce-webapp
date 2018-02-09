@@ -1,51 +1,57 @@
-<h2>{{titulo}}</h2>
-<hr>
-<div *ngIf="products.length == 0; then noProduct else existsProducts"></div>
-<ng-template #noProduct>
-	<strong>
-		{{resGetProducts}}
-	</strong>
-</ng-template>
-<ng-template #existsProducts>
-<div class="album py-5 bg-light">
-  <div class="container">
-  <div class="row">
-  <div class="col-md-3" *ngFor=" let product of products ">
-    <div class="card mb-4 box-shadow image-container-preview" >	
-			<img class="image-style-preview card-img-top" src="{{url}}upload/{{product.image}}">
-    	<div class="card-body">
-				<h3>{{product.name}}</h3> 
-				<p >{{product.price}}</p>
-				<div class="d-flex justify-content-between align-items-center">
-					<div class="btn-group" *ngIf="confirm != product._id">
-            <button type="button" class="btn btn-sm btn-outline-secondary" [routerLink]="['/product-detail',product._id]">
-            	Ver
-            </button>
-            <button type="button" class="btn btn-sm btn-outline-secondary" [routerLink]="['/product-edit',product._id]">
-            	Editar
-            </button>
-            <button (click)="confirmDelete(product._id);" type="button" class="btn btn-sm btn-outline-danger">
-            	Borrar
-            </button>            
+<app-header></app-header>
+<div class="container">
+  <h2>{{titulo}}</h2>
+  <hr>
+  <div *ngIf="products.length == 0; then noProduct else existsProducts"></div>
+  <ng-template #noProduct>
+    <strong>
+      {{resGetProducts}}
+    </strong>
+  </ng-template>
+  <ng-template #existsProducts>
+    <div class="album py-5 bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3" *ngFor=" let product of products ">
+            <div class="card mb-4 box-shadow image-container-preview">
+              <img class="image-style-preview card-img-top" src="{{url}}upload/{{product.image}}">
+              <div class="card-body">
+                <h3>{{product.name}}</h3>
+                <p>{{product.price}}</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group" *ngIf="confirm != product._id">
+                    <button type="button" class="btn btn-sm btn-outline-secondary" [routerLink]="['/product-detail',product._id]">
+                      Ver
+                    </button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary" [routerLink]="['/product-edit',product._id]">
+                      Editar
+                    </button>
+                    <button (click)="confirmDelete(product._id);" type="button" class="btn btn-sm btn-outline-danger">
+                      Borrar
+                    </button>
+                  </div>
+                  <div *ngIf="confirm == product._id">
+                    <p class="ml-1">¿Seguro que desea borrar el registro?</p>
+                    <div class="p-1">
+                      <a class="btn btn-sm btn-danger text-light" (click)="deleteProdut(product._id)">
+                        <i class="fa fa-check-circle"></i>
+                        Eliminar
+                      </a>
+                      <a class="btn btn-sm btn-primary text-light" (click)="cancelDelete()">
+                        <i class="fa fa-times"></i>
+                        Cancelar
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div *ngIf="confirm == product._id">
-            <p class="ml-1">¿Seguro que desea borrar el registro?</p>
-            <div class="p-1">
-              <a class="btn btn-sm btn-danger text-light" (click)="deleteProdut(product._id)">
-                <i class="fa fa-check-circle"></i>
-                Eliminar
-              </a>          
-              <a class="btn btn-sm btn-primary text-light" (click)="cancelDelete()">
-                <i class="fa fa-times"></i>
-                Cancelar
-              </a>
-            </div>          
-          </div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div><!-- row -->
-</div><!-- container -->
-</div><!-- album -->
-</ng-template>
+        </div>
+        <!-- row -->
+      </div>
+      <!-- container -->
+    </div>
+    <!-- album -->
+  </ng-template>
+</div>

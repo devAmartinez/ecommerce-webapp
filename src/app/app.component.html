@@ -1,38 +1,6 @@
-<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 border-bottom box-shadow bd-navbar text-white font-weight-bold"> <!-- Inicia encabezado -->
-  <h5 class="my-2 mr-md-auto font-weight-normal">
-    {{title}}
-  </h5>
-  <nav id="nav" class="navbar navbar-expand-md navbar-light bg-light">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navBarToggle" aria-controls="navBarToggle" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div id="navBarToggle" class="collapse navbar-collapse">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/home']" routerLinkActive="active" >
-            Home 
-            <span class="sr-only">(current)</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a  class="nav-link" [routerLink]="['/products']" routerLinkActive="active">
-            Productos
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/add-product']" routerLinkActive="active">
-            Crear producto
-          </a>
-        </li>
-      </ul>
-    </div>    
-  </nav>   
-</div> <!-- Fin encabezado -->
-<div class="container">
-  <!-- Bloque central -->
-    <router-outlet></router-outlet>
-  <!-- Fin bloque central -->   
-</div> 
-<footer class="footer"> <!-- Pie de página -->
-  <p>Proyecto webApp MEAN</p>
-</footer> <!-- Fin pie de página -->
+<!-- Bloque central -->
+
+<router-outlet></router-outlet>
+
+<!--<app-footer></app-footer> --> 
+<!-- Fin bloque central -->

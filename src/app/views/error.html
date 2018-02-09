@@ -1,21 +1,16 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <div class="text-center">
-        <h1>
-          {{titulo}}
-        </h1>
-        <div class="text-center">
-          {{detalle}}
-        </div>
-        <div class="text-center">
-        	<p>Lo que puedes hacer es:</p>
-          <a [routerLink]="['/home']" class="btn btn-primary btn-lg">
-          	<i class="fa fa-home" aria-hidden="true"></i>
-            Ir a la página inicial
-          </a>
-        </div>
-      </div>
+<div class="container " style="padding: 5%;">
+  <div class="card text-center " style="max-width: 50rem; padding: 5%; margin: 0 auto;">
+    <h1 class="text-primary">Error 404</h1>
+    <h1>Página no encontrada</h1>
+    <div class="card-body">
+      <p class="card-text">{{detalle}}</p>
+      <p class="card-title">Lo que puedes hacer es:</p>    
     </div>
-  </div>
+    <footer>
+      <a [routerLink]="['/home']" class="btn btn-primary btn-lg">
+        <i class="fa fa-home" aria-hidden="true"></i>
+        Ir a la página inicial
+      </a>
+    </footer>
+  </div>  
 </div>

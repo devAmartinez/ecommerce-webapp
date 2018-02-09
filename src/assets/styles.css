@@ -14,7 +14,12 @@ body {
   Estilo barra navegación 
 */
 .bd-navbar {
-    background-color: #E03137;
+    background-color: #03A9F4;
+}
+.nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
+    color: #fff;
+    background-color: #1BBC9B;
+    border-color: #dee2e6 #dee2e6 #fff;
 }
 
 /*

@@ -24,7 +24,18 @@
             Crear producto
           </a>
         </li>
+        <li class="nav-item">          
+          <a class="nav-link text-light" data-toggle="modal" data-target="#loginModalView" [routerLink]="['/signin']" routerLinkActive="active">
+            <i class="fa fa-user"></i> Iniciar sesión
+          </a>
+        </li>
+        <li class="nav-item">          
+          <a class="nav-link text-light" [routerLink]="['/add-product']" routerLinkActive="active">
+            <i class="fa fa-sign-out"></i> Cerrar sesión
+          </a>
+        </li>
       </ul>
     </div>    
   </nav>   
 </div> <!-- Fin encabezado -->
+<app-sign-in></app-sign-in>

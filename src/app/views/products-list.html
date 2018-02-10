@@ -1,9 +1,10 @@
 <app-header></app-header>
 <div class="container">
   <div class="alert alert-info">
-    <p>
-      <i class="fa fa-info"></i>
-      <strong>{{titulo}}</strong>.</p>
+    <h3>
+      <i class="fa fa-info-circle"></i>
+      <strong>{{titulo}}</strong>.
+    </h3>
   </div>
   <hr class="double dashed">
   <div *ngIf="products.length == 0; then noProduct else existsProducts"></div>

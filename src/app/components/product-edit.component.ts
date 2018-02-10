@@ -7,10 +7,10 @@ import { Product } from '../models/product';
 import { GLOBAL } from '../services/global';
 
 @Component({
-	selector: 'product-edit',
+	selector: 'app-product-edit',
 	templateUrl: '../views/product-add.html',
 	providers: [ProductService]
-})										
+})
 
 export class ProductEditComponent {
 	public titulo: string;
@@ -23,14 +23,14 @@ export class ProductEditComponent {
 		fileName: ''
 	};
 	public resFileUpload: string;
-
+	
 	constructor(
 		public _route: ActivatedRoute,
 		public _router: Router,
 		public _productService: ProductService
 	) {
-		this.titulo = 'Editar producto';
-		this.product = new Product('0','','',null,'');
+    this.titulo = 'Editar producto';
+		this.product = new Product('0', '', '', null, '');
 		this.isEdit = true;
 		this.url = GLOBAL.url;
 	}

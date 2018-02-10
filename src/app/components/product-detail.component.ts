@@ -7,7 +7,7 @@ import { Product } from '../models/product';
 import { GLOBAL } from '../services/global';
 
 @Component({
-	selector: 'product-detail',
+	selector: 'app-product-detail',
 	templateUrl: '../views/product-detail.html',
 	providers: [ProductService]
 })

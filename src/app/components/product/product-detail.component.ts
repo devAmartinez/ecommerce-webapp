@@ -2,13 +2,13 @@ import { Component } from '@angular/core';
 import {  Router,
 					ActivatedRoute,
 					Params } from '@angular/router';
-import { ProductService } from '../services/product.service';				
-import { Product } from '../models/product';
-import { GLOBAL } from '../services/global';
+import { ProductService } from '../../services/product.service';				
+import { Product } from '../../models/product';
+import { GLOBAL } from '../../services/global';
 
 @Component({
-	selector: 'product-detail',
-	templateUrl: '../views/product-detail.html',
+	selector: 'app-product-detail',
+	templateUrl: '../../views/product/product-detail.html',
 	providers: [ProductService]
 })
 

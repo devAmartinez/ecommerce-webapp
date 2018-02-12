@@ -7,23 +7,33 @@ import { HttpModule  } from '@angular/http';
 import { AppComponent } from './app.component';
 
 // Componentes propios
-import { HomeComponent } from './components/home.component';
-import { ProductsListComponent } from './components/products-list.component';
-import { ProductAddComponent } from './components/product-add.component';
-import { ProductDetailComponent } from './components/product-detail.component';
-import { ProductEditComponent } from './components/product-edit.component';
-import { ErrorComponent } from './components/error.component';
+import { HeaderComponent } from './components/general/header.component';
+import { FooterComponent } from './components/general/footer.component';
+import { HomeComponent } from './components/general/home.component';
+import { ProductsListComponent } from './components/product/products-list.component';
+import { ProductAddComponent } from './components/product/product-add.component';
+import { ProductDetailComponent } from './components/product/product-detail.component';
+import { ProductEditComponent } from './components/product/product-edit.component';
+
+import { SignInComponent } from './components/user/sign-in.component';
+import { SignUpComponent } from './components/user/sign-up.component';
+
+import { Error404Component } from './components/error/error-404.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    HeaderComponent,
+    FooterComponent,
     HomeComponent,
     ProductsListComponent,
     ProductAddComponent,
     ProductDetailComponent,
     ProductEditComponent,
-    ErrorComponent
+    SignInComponent,
+    SignUpComponent,
+    Error404Component
   ],
   imports: [
     BrowserModule,

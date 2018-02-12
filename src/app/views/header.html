@@ -1,17 +1,16 @@
-<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 border-bottom box-shadow bd-navbar text-white font-weight-bold"> <!-- Inicia encabezado -->
-  <h5 class="my-2 mr-md-auto font-weight-normal">
+<div class="d-flex flex-column flex-md-row p-3 px-md-4 mb-3 border-bottom box-shadow bd-navbar"> <!-- Inicia encabezado -->
+  <h5 class="my-2 mr-md-auto text-light font-weight-bold">
     {{tituloEncabezado}}
   </h5>
-  <nav id="nav" class="navbar navbar-expand-md ">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navBarToggle" aria-controls="navBarToggle" aria-expanded="false" aria-label="Toggle navigation">
+  <nav id="nav" class="navbar navbar-expand-lg navbar-light ">
+    <button class="navbar-toggler bg-light" type="button" data-toggle="collapse" data-target="#navBarToggle" aria-controls="navBarToggle" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div id="navBarToggle" class="collapse navbar-collapse">
-      <ul class="nav nav-tabs justify-content-end " role="tablist">
-        <li class="nav-item">
-          <a class="nav-link text-light" [routerLink]="['/home']" routerLinkActive="active" >
-            Home 
-            <span class="sr-only">(current)</span>
+    <div id="navBarToggle" class="collapse navbar-collapse text-light">
+      <ul class="navbar-nav mt-3">
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link text-light" [routerLink]="['/home']"  >
+            Home
           </a>
         </li>
         <li class="nav-item">

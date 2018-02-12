@@ -13,12 +13,17 @@ import { User } from '../models/user';
 
 export class SignInComponent {
 	public titulo: string;
+	public user: User;
 
 	constructor() {
 		this.titulo = 'Iniciar sesión';
 	}
 
 	signIn() {
+
+	}
+
+	onSubmit() {
 
 	}
 }

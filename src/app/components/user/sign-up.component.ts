@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { UserService } from '../services/user.service';
-import { GLOBAL } from '../services/global';
-import { User } from '../models/user';
+import { UserService } from '../../services/user.service';
+import { GLOBAL } from '../../services/global';
+import { User } from '../../models/user';
 
 @Component({
 	selector: 'app-sign-up',
-	templateUrl: '../views/sign-up.html',
+	templateUrl: '../../views/user/sign-up.html',
 	providers: [UserService]
 })
 

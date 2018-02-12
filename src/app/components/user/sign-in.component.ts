@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 import {  Router,
 					ActivatedRoute,
 					Params } from '@angular/router';
-import { UserService } from '../services/user.service';
-import { User } from '../models/user';
+import { UserService } from '../../services/user.service';
+import { User } from '../../models/user';
 
 @Component({
 	selector: 'app-sign-in',
-	templateUrl: '../views/sign-in.html',
+	templateUrl: '../../views/user/sign-in.html',
 	providers: [UserService]
 })
 

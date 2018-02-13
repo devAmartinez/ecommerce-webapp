@@ -1,0 +1,62 @@
+<!-- Modal -->
+<div class="modal fade" id="loginModalView" tabindex="-1" role="dialog" aria-labelledby="loginModalViewTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-md" role="document">
+    <div class="modal-content">
+      <div class="modal-header">        
+        <div class="modal-header-tabs">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <ul class="nav nav-tabs nav-tabs-primary" role="tablist">
+            <li class="nav-item" role="presentation">
+              <a href="#login-tab" role="tab" data-toggle="tab" class="nav-link active show" aria-selected="true">
+                <i class="fa fa-user mr-2"></i>Iniciar sesión</a>
+            </li>
+            <li class="nav-item" role="presentation">
+              <a href="#register-tab" aria-controls="register-tab" role="tab" data-toggle="tab" class="nav-link" aria-selected="false">
+                <i class="fa fa-user-plus mr-2"></i>Registrarse</a>
+            </li>
+            <!-- 
+            <li class="nav-item" role="presentation">
+              <a href="#recovery-tab" aria-controls="recovery-tab" role="tab" data-toggle="tab" class="nav-link" aria-selected="false">
+                <i class="fa fa-user-plus mr-2"></i>Recuperar contraseña</a>
+            </li>
+             -->
+            <span id="i1" class="ms-tabs-indicator" style="left: 0px; width: 165.983px;"></span>
+          </ul>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane fade active show" id="login-tab">
+            <app-sign-in></app-sign-in>
+          </div>
+          <div role="tabpanel" class="tab-pane fade" id="register-tab">
+            <app-sign-up></app-sign-up>
+          </div>
+          <div role="tabpanel" class="tab-pane fade" id="recovery-tab">
+            <fieldset>
+              <div class="form-group label-floating is-empty">
+                <div class="input-group">
+                  <span class="input-group-addon">
+                    <i class="zmdi zmdi-account"></i>
+                  </span>
+                  <label class="control-label" for="ms-form-user-re">Username</label>
+                  <input id="ms-form-user-re" class="form-control" type="text"> </div>
+              </div>
+              <div class="form-group label-floating is-empty">
+                <div class="input-group">
+                  <span class="input-group-addon">
+                    <i class="zmdi zmdi-email"></i>
+                  </span>
+                  <label class="control-label" for="ms-form-email-re">Email</label>
+                  <input id="ms-form-email-re" class="form-control" type="email"> </div>
+              </div>
+              <button class="btn btn-raised btn-block btn-primary">Send Password</button>
+            </fieldset>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> 

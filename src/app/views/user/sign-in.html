@@ -1,48 +1,47 @@
-<!-- Modal -->
-<div class="modal fade" id="loginModalView" tabindex="-1" role="dialog" aria-labelledby="loginModalViewTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-md" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">
-          {{titulo}}
-        </h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+<form id="sigIn" autocomplete="off" #formSignIn="ngForm" (ngSubmit)="onSubmit(); ">
+  <fieldset>
+    <div class="form-group">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text">
+            <i class="fa fa-at"></i>
+          </span>
+        </div>
+        <input id="input-email-signin" name="email" class="form-control" required type="email" placeholder="Correo electrónico" [value]="user.email" [(ngModel)]="user.email">
       </div>
-      <div class="modal-body">
-        <form #formLogin="ngForm" (ngSubmit)="onSubmit();" class="needs-validation" >
-          <div class="input-group">            
-            <div class="input-group-prepend">
-              <span class="input-group-text">
-                <i class="fa fa-user"></i>
-              </span>
-            </div>
-            <input class="form-control" name="displayName" placeholder="Nombre de usuario" type="text">
-            <div *ngIf="formProduct.hasError('required', 'displayName') && formProduct.submitted" class="alert alert-danger">
-              Valide el nombre de usuario, es requerido.
-            </div>
-          </div>
-          <div class="mb-3">
-            <div class="input-group">
-              <div class="input-group-prepend">
-              <span class="input-group-text">
-                
-              <i class="fa fa-lock"></i>
-              </span>
-            </div>
-              <input class="form-control" name="password" placeholder="Contraseña" value="" required type="password" #password="ngModel" [(ngModel)]="user.password">
-            </div>
-            <div *ngIf="formProduct.hasError('required', 'password') && formProduct.submitted" class="alert alert-danger">
-              Valide la contraseña, es requerida.
-            </div>
-          </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+      <div *ngIf="formSignIn.hasError('required', 'email') && formSignIn.submitted" class="alert alert-danger">
+          Valide el correo electrónico, es requerido.
       </div>
     </div>
-  </div>
-</div>
+    <div class="form-group">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text">
+            <i class="fa fa-lock"></i>
+          </span>
+        </div>
+        <input id="input-pass-signin" name="password" class="form-control" required type="password" placeholder="Contraseña" #password="ngModel" [(ngModel)]="user.password">
+      </div>
+      <div *ngIf="formSignIn.hasError('required', 'password') && formSignIn.submitted" class="alert alert-danger">
+          Valide la contraseña, es requerida.
+      </div>
+    </div>
+    <div class="row mt-2">
+      <div class="col-md-6">
+        <div class="form-group no-mt">
+          <div class="custom-control custom-checkbox">
+            <input class="custom-control-input" id="check-signin" type="checkbox">
+            <label class="custom-control-label" for="check-signin">
+              Recuérdame
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <button type="submit" class="btn btn-raised btn-primary pull-right">
+          Ingresar
+        </button>
+      </div>
+    </div>
+  </fieldset>
+</form>

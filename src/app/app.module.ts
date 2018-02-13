@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/general/header.component';
 import { FooterComponent } from './components/general/footer.component';
 import { HomeComponent } from './components/general/home.component';
+
 import { ProductsListComponent } from './components/product/products-list.component';
 import { ProductAddComponent } from './components/product/product-add.component';
 import { ProductDetailComponent } from './components/product/product-detail.component';
@@ -17,6 +18,7 @@ import { ProductEditComponent } from './components/product/product-edit.componen
 
 import { SignInComponent } from './components/user/sign-in.component';
 import { SignUpComponent } from './components/user/sign-up.component';
+import { ModalViewUserComponent } from './components/user/modal-view-login.component';
 
 import { Error404Component } from './components/error/error-404.component';
 
@@ -33,6 +35,7 @@ import { Error404Component } from './components/error/error-404.component';
     ProductEditComponent,
     SignInComponent,
     SignUpComponent,
+    ModalViewUserComponent,
     Error404Component
   ],
   imports: [

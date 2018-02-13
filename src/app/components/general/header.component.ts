@@ -11,4 +11,5 @@ export class HeaderComponent {
 	constructor() {
 		this.tituloEncabezado = 'Ecommerce webApp en Angular 5 (MEAN)';
 	}
+
 }

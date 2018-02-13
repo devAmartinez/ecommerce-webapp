@@ -1,7 +1,4 @@
 import { Component } from '@angular/core';
-import {  Router,
-					ActivatedRoute,
-					Params } from '@angular/router';
 import { UserService } from '../../services/user.service';
 import { User } from '../../models/user';
 
@@ -17,6 +14,7 @@ export class SignInComponent {
 
 	constructor() {
 		this.titulo = 'Iniciar sesión';
+		this.user = new User('', '', '', '');
 	}
 
 	signIn() {
@@ -25,5 +23,9 @@ export class SignInComponent {
 
 	onSubmit() {
 
+	}
+
+	clearForm() {
+		this.user.email = null;
 	}
 }

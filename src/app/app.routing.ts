@@ -11,8 +11,7 @@ import { ProductAddComponent } from './components/product/product-add.component'
 import { ProductDetailComponent } from './components/product/product-detail.component';
 import { ProductEditComponent } from './components/product/product-edit.component';
 
-import { SignInComponent } from './components/user/sign-in.component';
-import { SignUpComponent } from './components/user/sign-up.component';
+import { ModalViewUserComponent } from './components/user/modal-view-login.component';
 
 import { Error404Component } from './components/error/error-404.component';
 
@@ -23,8 +22,7 @@ const appRoutes: Routes = [
   {path: 'add-product', component: ProductAddComponent},
   {path: 'product-detail/:id', component: ProductDetailComponent},
   {path: 'product-edit/:id', component: ProductEditComponent},
-  {path: 'signin', component: SignInComponent},
-  {path: 'signup', component: SignUpComponent},
+  {path: 'modalLogin', component: ModalViewUserComponent},
   {path: '**', component: Error404Component}
 ];
 

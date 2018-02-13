@@ -1,1 +1,42 @@
-<h1>{{titulo}}</h1>
+<form>
+  <fieldset>
+    <div class="form-group">
+      <div class="input-group">
+      	<div class="input-group-prepend">
+          <span class="input-group-text">
+            <i class="fa fa-user"></i>
+          </span>
+        </div>
+        <input id="input-displayName-signup" placeholder="Nombre completo" class="form-control" type="text">
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text">
+            <i class="fa fa-at"></i>
+          </span>
+        </div>
+        <input id="input-email-signup" placeholder="Correo electronico" class="form-control" type="email">
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text">
+            <i class="fa fa-lock"></i>
+          </span>
+        </div>
+        <input id="input-pass-signup" class="form-control" [type]="!changeType ? 'password' : 'text'" placeholder="Contraseña">
+        <div class="input-group-prepend">
+          <span class="input-group-text">
+            <i class="fa" [ngClass]="{'fa-eye':!changeType, 'fa-eye-slash':changeType}" (mouseenter)="changeTypeObject(true)" (mouseleave)="changeTypeObject(false)" id="show-pass-signup"></i>
+          </span>
+        </div>
+      </div>
+    </div>
+    <button class="btn btn-block btn-primary">
+    	Registrarse
+    </button>
+  </fieldset>
+</form>

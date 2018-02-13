@@ -12,10 +12,21 @@ import { User } from '../../models/user';
 export class SignUpComponent {
 	public titulo: string;
 	public user: User;
+	public changeType: boolean;
 
 	constructor() {
 		this.titulo = 'Registrarse como nuevo usuario';
 		this.user = new User('','','','');
+		this.changeType = false;
+	}
+
+	
+	ngOnInit() {
+
+	}
+
+	changeTypeObject(changeType: boolean) {
+		this.changeType = changeType;
 	}
 
 	signUp() {

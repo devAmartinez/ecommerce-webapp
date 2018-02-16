@@ -44,7 +44,13 @@ import { Error404Component } from './components/error/error-404.component';
     HttpModule,
     routing
   ],
-  providers: [appRoutingProviders],
+  providers: [
+    appRoutingProviders,
+    {
+      provide: 'AUTH_TOKEN', 
+      useValue: 'token'
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

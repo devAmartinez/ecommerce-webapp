@@ -11,5 +11,7 @@ import {  Router,
 export class ModalViewUserComponent {
 
 	constructor() {
+
 	}
+
 }

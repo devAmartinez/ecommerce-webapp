@@ -13,7 +13,7 @@
       <div class="mb-3">
         <label for="name">Nombre del producto</label>
         <div class="input-group">
-          <input class="form-control" name="name" placeholder="" value="" required type="text" #nombre="ngModel" [(ngModel)]="product.name">          
+          <input class="form-control" name="name" placeholder="" value="" required type="text" #name="ngModel" [(ngModel)]="product.name">          
         </div>
         <div *ngIf="formProduct.hasError('required', 'name') && formProduct.submitted" class="alert alert-danger">
           Valide el nombre del producto, es requerido.

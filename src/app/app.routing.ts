@@ -16,7 +16,7 @@ import { ModalViewUserComponent } from './components/user/modal-view-login.compo
 import { Error404Component } from './components/error/error-404.component';
 
 const appRoutes: Routes = [
-  {path: '',	component: HomeComponent},
+  {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: 'home', component: HomeComponent},
   {path: 'products', component: ProductsListComponent},
   {path: 'add-product', component: ProductAddComponent},

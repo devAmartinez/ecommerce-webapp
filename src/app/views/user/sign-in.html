@@ -1,4 +1,4 @@
-<form id="sigIn" autocomplete="off" #formSignIn="ngForm" (ngSubmit)="onSubmit(); ">
+<form id="sigIn" #formSignIn="ngForm" (ngSubmit)="onSubmit()">
   <fieldset>
     <div class="form-group">
       <div class="input-group">
@@ -10,7 +10,7 @@
         <input id="input-email-signin" name="email" class="form-control" required type="email" placeholder="Correo electrónico" [value]="user.email" [(ngModel)]="user.email">
       </div>
       <div *ngIf="formSignIn.hasError('required', 'email') && formSignIn.submitted" class="alert alert-danger">
-          Valide el correo electrónico, es requerido.
+        Valide el correo electrónico, es requerido.
       </div>
     </div>
     <div class="form-group">
@@ -23,7 +23,7 @@
         <input id="input-pass-signin" name="password" class="form-control" required type="password" placeholder="Contraseña" #password="ngModel" [(ngModel)]="user.password">
       </div>
       <div *ngIf="formSignIn.hasError('required', 'password') && formSignIn.submitted" class="alert alert-danger">
-          Valide la contraseña, es requerida.
+        Valide la contraseña, es requerida.
       </div>
     </div>
     <div class="row mt-2">

@@ -1,4 +1,4 @@
-<form>
+<form id="signUp" #formSignUp="ngForm" (ngSubmit)="onSubmit()">
   <fieldset>
     <div class="form-group">
       <div class="input-group">
@@ -7,7 +7,10 @@
             <i class="fa fa-user"></i>
           </span>
         </div>
-        <input id="input-displayName-signup" placeholder="Nombre completo" class="form-control" type="text">
+        <input id="input-displayName-signup" name="displayName" placeholder="Nombre completo" class="form-control" type="text" [value]="user.displayName" [(ngModel)]="user.displayName">
+      </div>
+      <div *ngIf="formSignUp.hasError('required', 'displayName') && formSignUp.submitted" class="alert alert-danger">
+          Debe proporcionar un nombre. 
       </div>
     </div>
     <div class="form-group">
@@ -17,7 +20,10 @@
             <i class="fa fa-at"></i>
           </span>
         </div>
-        <input id="input-email-signup" placeholder="Correo electronico" class="form-control" type="email">
+        <input id="input-email-signup" name="email" placeholder="Correo electronico" class="form-control" type="email" [value]="user.email" [(ngModel)]="user.email">
+      </div>
+      <div *ngIf="formSignUp.hasError('required', 'email') && formSignUp.submitted" class="alert alert-danger">
+        Valide el correo electrónico, es requerido.
       </div>
     </div>
     <div class="form-group">
@@ -27,15 +33,18 @@
             <i class="fa fa-lock"></i>
           </span>
         </div>
-        <input id="input-pass-signup" class="form-control" [type]="!changeType ? 'password' : 'text'" placeholder="Contraseña">
+        <input id="input-pass-signup" name="password" class="form-control" [type]="!changeType ? 'password' : 'text'" placeholder="Contraseña" [value]="user.password" [(ngModel)]="user.password">
         <div class="input-group-prepend">
           <span class="input-group-text">
             <i class="fa" [ngClass]="{'fa-eye':!changeType, 'fa-eye-slash':changeType}" (mouseenter)="changeTypeObject(true)" (mouseleave)="changeTypeObject(false)" id="show-pass-signup"></i>
           </span>
         </div>
       </div>
+      <div *ngIf="formSignUp.hasError('required', 'password') && formSignUp.submitted" class="alert alert-danger">
+        Valide la contraseña, es requerida.
+      </div>
     </div>
-    <button class="btn btn-block btn-primary">
+    <button type="submit" class="btn btn-block btn-primary">
     	Registrarse
     </button>
   </fieldset>

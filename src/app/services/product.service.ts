@@ -38,8 +38,8 @@ export class ProductService {
   	};
 
 	  let headers = new Headers({
-	  	'Content-type': 'application/json',
-	  	'Authorization': GLOBAL.token
+	  	'Content-type': 'application/json'//,
+	  	//'Authorization': GLOBAL.token
 	  })
   	console.log(body);
   	return this._http
@@ -56,8 +56,8 @@ export class ProductService {
   	};
 
 	  let headers = new Headers({
-	  	'Content-type': 'application/json',
-	  	'Authorization': GLOBAL.token
+	  	'Content-type': 'application/json'//,
+	  	//'Authorization': GLOBAL.token
 	  })
 
 	  console.log(body);

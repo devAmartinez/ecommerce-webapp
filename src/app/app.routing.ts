@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 
 // Componentes propios
-import { HeaderComponent } from './components/general/header.component';
+import { HeaderComponent } from './components/general/header-login.component';
 import { FooterComponent } from './components/general/footer.component';
 import { HomeComponent } from './components/general/home.component';
 import { ProductsListComponent } from './components/product/products-list.component';

@@ -1,8 +1,10 @@
-import { Injectable, Inject } from '@angular/core';
-import {	Http,
-					Response,
-					Headers,
-					RequestOptions } from '@angular/http';
+import { Injectable } from '@angular/core';
+import {	
+	Http,
+	Response,
+	Headers,
+	RequestOptions 
+} from '@angular/http';
 import 'rxjs/add/operator/map';
 import { Observable } from 'rxjs/Observable';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
@@ -13,17 +15,16 @@ import { GLOBAL } from './global';
 
 export class UserService {
 	public url: string;
-	private _logged = new BehaviorSubject<boolean>(this.getToken() !== null ? true : false);
+	//private _logged = new BehaviorSubject<boolean>(this.getToken() !== null ? true : false);
 
 	constructor(
-		private _http: Http,
-		@Inject('AUTH_TOKEN') private _authTokenName: string
+		private _http: Http
 	) {
 		this.url = GLOBAL.url;
-		this._logged = new BehaviorSubject<boolean>(false);
+		//this._logged = new BehaviorSubject<boolean>(false);
 	}
 
-	signUp(user: User): void {
+	signUp(user: any){
 		let body = {
 			'email': user.email,
 			'displayName': user.displayName,
@@ -34,30 +35,54 @@ export class UserService {
 			'Content-type': 'application/json'
 		});
 
-		this._http
+		return this._http
 			.post(this.url + 'signup', body, { headers: header })
-			.subscribe(
-				(res: any) => {
-					localStorage.setItem(this._authTokenName,res.token);
-					this._logged.next(true);
-				},
-				(err: any) => {
-					this._logged.next(false);
-				}
-			);
+			.map(res => res.json());
 	}
 
-	getToken(): string {
+	signIn(user: any){
+		let body = {
+			'email': user.email,
+			'password': user.password
+		};
+
+		let header = new Headers ({
+			'Content-type': 'application/json'
+		});
+
+		return this._http
+			.post(this.url + 'signin', body, { headers: header })
+			.map(res => res.json());
+	}
+
+	storeToken(token: string): Promise < boolean > {
+    localStorage.setItem('AUTH_TOKEN', token);
+    return Promise.resolve(true);
+  }
+
+  removeToken(): Promise < boolean > {
+    localStorage.removeItem('AUTH_TOKEN');
+    return Promise.resolve(true);
+  }
+
+
+/*
+	getToken() {
 		return localStorage.getItem(this._authTokenName);
 	}
 
+	storeToken(tokenName:string, token: string): Promise < boolean > {
+    localStorage.setItem(tokenName, token);
+    return Promise.resolve(true);
+  }*/
+/*
 	isLogged(): BehaviorSubject<boolean> {
 		return this._logged;
 	}
 
-	logout(): void {
+	logout() {
     localStorage.removeItem(this._authTokenName);
     //localStorage.removeItem(this.authUser);
-    this._logged.next(false);
-  }
+    //this._logged.next(false);
+  }*/
 }

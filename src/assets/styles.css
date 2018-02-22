@@ -1,5 +1,7 @@
  @import "~bootstrap/dist/css/bootstrap.min.css";
  @import "~font-awesome/css/font-awesome.css";
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
 
 .custom-file-input:lang(es) ~ .custom-file-label::after {
   content: "Buscar";
@@ -8,6 +10,7 @@
 body {
 	font-family: 'Montserrat', sans-serif;
 	background-color: #ECF0F5;
+  margin: 0;
 }
 
 /*
@@ -55,3 +58,21 @@ body {
     text-align: center;
     padding: 40px 0;
 }
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+
+.example-form {
+  margin-top: 15px;
+  max-width: 500px;
+  min-width: 150px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+  padding-top: .5rem !important;
+}
+

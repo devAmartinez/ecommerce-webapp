@@ -1,0 +1,27 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>    
+    <span>{{tituloEncabezado}}</span>
+    
+    <span class="example-spacer"></span>
+
+    <button mat-button [routerLink]="['/home']">
+      Home
+    </button>
+    
+    <div *ngIf="isLoggedIn; then withAccess else logIn"></div>
+    <ng-template #logIn>
+      <button mat-button (click)="openDialog()">
+        Iniciar sesión
+      </button>
+    </ng-template>
+    <ng-template #withAccess>
+      <button mat-button [routerLink]="['/products']">
+        Productos
+      </button>
+      <button mat-button [routerLink]="['/add-product']">
+        Crear producto
+      </button>
+      <app-logout></app-logout>
+    </ng-template>
+  </mat-toolbar-row>
+</mat-toolbar>

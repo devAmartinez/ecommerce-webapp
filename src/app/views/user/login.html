@@ -1,0 +1,86 @@
+<mat-card-content>
+  <mat-card-header>
+    <h2>{{data}}</h2>
+  </mat-card-header>
+  <mat-tab-group (selectedTabChange)="isSignInTab = !isSignInTab" class="demo-tab-group">
+    <mat-tab label="Tab 1">
+      <ng-template mat-tab-label>
+        <mat-icon matTooltip="Ya tengo cuenta">
+          person
+        </mat-icon>
+      </ng-template>
+      <form [formGroup]="formSignIn" class="example-form">
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Correo electrónico"  formControlName="email" required>
+          <mat-error *ngIf="formSignIn.controls['email'].errors && !formSignIn.controls['email'].errors.required">
+            Debes ingresar un correo electrónico valido
+          </mat-error>
+          <mat-error *ngIf="formSignIn.controls['email'].errors && formSignIn.controls['email'].errors.required">
+            El correo electrónico <strong>es requerido</strong>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <input matInput [type]="hideIconEye ? 'password' : 'text'" required formControlName="password"  placeholder="Contraseña" >
+          <mat-icon matSuffix (click)="hideIconEye = !hideIconEye">
+            {{hideIconEye ? 'visibility' : 'visibility_off'}}
+          </mat-icon>
+          <mat-error *ngIf="formSignIn.controls['password'].errors && formSignIn.controls['password'].errors.required ">
+            La contraseña <strong>es requerida</strong>
+          </mat-error>
+        </mat-form-field>
+      </form>        
+    </mat-tab>
+    <mat-tab label="Tab 2">
+      <ng-template mat-tab-label>
+        <mat-icon matTooltip="Crear una cuenta">
+          person_add
+        </mat-icon>
+      </ng-template>
+      <form [formGroup]="formSignUp" class="example-form">
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Nombre completo"  formControlName="displayName" required>
+          <mat-error *ngIf="formSignUp.controls['displayName'].errors && formSignUp.controls['displayName'].errors.required">
+            El nombre <strong>es requerido</strong>
+          </mat-error>
+          <mat-error *ngIf="formSignUp.controls['displayName'].errors && formSignUp.controls['displayName'].errors.minlength">
+            El nombre debe ser de al menos<strong> 3 caracteres</strong>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Correo electrónico"  formControlName="email" required>
+          <mat-error *ngIf="formSignUp.controls['email'].errors && !formSignUp.controls['email'].errors.required">
+            Debes ingresar un correo electrónico valido
+          </mat-error>
+          <mat-error *ngIf="formSignUp.controls['email'].errors && formSignUp.controls['email'].errors.required">
+            El correo electrónico <strong>es requerido</strong>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <input matInput [type]="hideIconEye ? 'password' : 'text'" required formControlName="password"  placeholder="Contraseña" >
+          <mat-icon matSuffix (click)="hideIconEye = !hideIconEye">{{hideIconEye ? 'visibility' : 'visibility_off'}}</mat-icon>
+          <mat-error *ngIf="formSignIn.controls['password'].errors && formSignIn.controls['password'].errors.required ">
+            La contraseña <strong>es requerida</strong>
+          </mat-error>
+        </mat-form-field>
+      </form> 
+    </mat-tab>      
+  </mat-tab-group>
+</mat-card-content>
+<div mat-dialog-actions>
+  <span class="example-spacer"></span>
+  <button mat-raised-button mat-dialog-close>
+    Cancelar
+  </button>
+  <div *ngIf="isSignInTab; then submitSignIn else submitSignUp"></div>
+  <ng-template #submitSignIn>
+    <button mat-raised-button color="primary" [mat-dialog-close]="formSignIn">
+      Iniciar sesión
+    </button>
+  </ng-template>
+  <ng-template #submitSignUp>
+    <button mat-raised-button color="primary"
+    [mat-dialog-close]="formSignUp">
+      Registrarse
+    </button>
+  </ng-template>
+</div>

@@ -4,9 +4,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Propósito del proyecto
 La idea de este proyecto es conocer la mayor cantidad de funcionalidades en angular, no tiene una funcionalidad real, pero he implementado varias cosas, entre ellas las mas relevantes son:
-	- Consumo de API Restful
-	- Sistema de login desde ventana modal
-	- Implementación de material y bootstrap 4 como motores de interfaz
+- Consumo de API Restful
+- Sistema de login desde ventana modal
+- Implementación de material y bootstrap 4 como motores de interfaz
 
 ## Development server
 

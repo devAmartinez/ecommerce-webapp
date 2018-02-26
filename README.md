@@ -8,6 +8,9 @@ La idea de este proyecto es conocer la mayor cantidad de funcionalidades en angu
 - Sistema de login desde ventana modal
 - Implementación de material y bootstrap 4 como motores de interfaz
 
+## Url de la API Restful
+La API construida y utilizada para este proyecto se encuentra en [el siguiente proyecto](https://github.com/devAmartinez/api-restful)
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
